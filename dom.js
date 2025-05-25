@@ -49,32 +49,28 @@ let data = JSON.parse(localStorage.getItem("data")) || [
     age: "22",
     id: "4",
     status: false,
-    image:
-      "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740",
+    image: "./foto.avif",
   },
   {
     name: "Alijon",
     age: "30",
     id: "1",
     status: true,
-    image:
-      "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740",
+    image: "./foto.avif",
   },
   {
     name: "Zaynab",
     age: "25",
     id: "2",
     status: false,
-    image:
-      "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740",
+    image: "./foto.avif",
   },
   {
     name: "Anvar",
     age: "28",
     id: "3",
     status: true,
-    image:
-      "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740",
+    image: "./foto.avif",
   },
 ];
 
@@ -211,7 +207,7 @@ function getData(data) {
 
     let image = document.createElement("img");
     image.src = e.image;
-    image.style.width = "100%"
+    image.style.width = "100%";
 
     let btndele = document.createElement("button");
     btndele.innerHTML = "delete";
@@ -223,6 +219,8 @@ function getData(data) {
     btninfo.innerHTML = "info";
     btninfo.onclick = () => {
       infoDialog.showModal();
+      infoImage.src = e.image;
+      infoImage.style.width = "100%";
       infoName.innerHTML = `name: ${e.name}`;
       infoAge.innerHTML = `age: ${e.age}`;
       infoStatus.innerHTML = `status: ${e.status}`;
