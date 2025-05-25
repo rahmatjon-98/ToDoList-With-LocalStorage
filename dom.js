@@ -21,6 +21,7 @@ let infoName = document.querySelector(".infoName");
 let infoAge = document.querySelector(".infoAge");
 let infoStatus = document.querySelector(".infoStatus");
 let infoId = document.querySelector(".infoId");
+let infoImage = document.querySelector(".infoImage");
 
 let btneditClose = document.querySelector(".btneditClose");
 let btnaddClose = document.querySelector(".btnaddClose");
@@ -48,24 +49,32 @@ let data = JSON.parse(localStorage.getItem("data")) || [
     age: "22",
     id: "4",
     status: false,
+    image:
+      "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740",
   },
   {
     name: "Alijon",
     age: "30",
     id: "1",
     status: true,
+    image:
+      "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740",
   },
   {
     name: "Zaynab",
     age: "25",
     id: "2",
     status: false,
+    image:
+      "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740",
   },
   {
     name: "Anvar",
     age: "28",
     id: "3",
     status: true,
+    image:
+      "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740",
   },
 ];
 
@@ -122,6 +131,7 @@ statusSearch.onchange = () => {
 addForm.onsubmit = (event) => {
   event.preventDefault();
   let newUser = {
+    image: event.target["addImage"].value,
     name: event.target["addName"].value,
     age: event.target["addAge"].value,
     status: event.target["addStatus"].value == "active",
@@ -140,6 +150,7 @@ editForm.onsubmit = (event) => {
     if (e.id == idx) {
       return {
         ...e,
+        image: event.target["editImage"].value,
         name: event.target["editName"].value,
         age: event.target["editAge"].value,
         status: event.target["editStatus"].value == "active",
@@ -198,6 +209,10 @@ function getData(data) {
     let pStatus = document.createElement("p");
     pStatus.innerHTML = e.status ? "active" : "inactive";
 
+    let image = document.createElement("img");
+    image.src = e.image;
+    image.style.width = "100%"
+
     let btndele = document.createElement("button");
     btndele.innerHTML = "delete";
     btndele.onclick = () => {
@@ -225,6 +240,7 @@ function getData(data) {
     btnedit.innerHTML = "edit";
     btnedit.onclick = () => {
       editDialog.showModal();
+      editForm["editImage"].value = e.image;
       editForm["editName"].value = e.name;
       editForm["editAge"].value = e.age;
       editForm["editStatus"].value = e.status ? "active" : "inactive";
@@ -233,7 +249,7 @@ function getData(data) {
 
     body;
 
-    div.append(h2Name, pAge, pStatus, btndele, btnedit, btninfo, check);
+    div.append(image, h2Name, pAge, pStatus, btndele, btnedit, btninfo, check);
     box.append(div);
   });
 }

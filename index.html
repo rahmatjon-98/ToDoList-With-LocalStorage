@@ -11,8 +11,10 @@
 </head>
 
 <body class="body">
-    <button class="dark">Dark</button>
-    <button class="light">Light</button>
+    <div class="divTheme">
+        <button class="dark">Dark</button>
+        <button class="light">Light</button>
+    </div>
     <center>
         <select class="statusSearch">
             <option value="all">All</option>
@@ -26,6 +28,7 @@
 
     <dialog class="addDialog">
         <form class="addForm">
+            <input type="text" placeholder="Image" name="addImage"><br><br>
             <input type="text" placeholder="Name" name="addName"><br><br>
             <input type="text" placeholder="Age" name="addAge"><br><br>
             <select name="addStatus">
@@ -39,6 +42,7 @@
 
     <dialog class="editDialog">
         <form class="editForm">
+            <input type="text" placeholder="Image" name="editImage"><br><br>
             <input type="text" placeholder="Name" name="editName"><br><br>
             <input type="text" placeholder="Age" name="editAge"><br><br>
             <select name="editStatus">
@@ -51,6 +55,7 @@
     </dialog>
 
     <dialog class="infoDialog">
+        <p class="infoImage"></p>
         <p class="infoName"></p>
         <p class="infoAge"></p>
         <p class="infoStatus"></p>
