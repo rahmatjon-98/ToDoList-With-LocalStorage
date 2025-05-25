@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body class="body">
+    <button class="dark">Dark</button>
+    <button class="light">Light</button>
+    <center>
+        <select class="statusSearch">
+            <option value="all">All</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inctive</option>
+        </select>
+        <input type="text" class="inpSearch" placeholder="Search...">
+        <button class="btnNewUser">New User</button>
+        <button class="btnSort">Sort</button>
+    </center>
+
+    <dialog class="addDialog">
+        <form class="addForm">
+            <input type="text" placeholder="Name" name="addName"><br><br>
+            <input type="text" placeholder="Age" name="addAge"><br><br>
+            <select name="addStatus">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select><br><br>
+            <button>Save</button>
+            <button class="btnaddClose">cancel</button>
+        </form>
+    </dialog>
+
+    <dialog class="editDialog">
+        <form class="editForm">
+            <input type="text" placeholder="Name" name="editName"><br><br>
+            <input type="text" placeholder="Age" name="editAge"><br><br>
+            <select name="editStatus">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select><br><br>
+            <button>Save</button>
+            <button class="btneditClose">cancel</button>
+        </form>
+    </dialog>
+
+    <dialog class="infoDialog">
+        <p class="infoName"></p>
+        <p class="infoAge"></p>
+        <p class="infoStatus"></p>
+        <p class="infoId"></p>
+        <button class="btninfoClose">cancel</button>
+    </dialog>
+
+    <div class="box"></div>
+    <script type="module" src="./dom.js"></script>
+</body>
+
+</html>
